@@ -30,7 +30,7 @@ body {
         .splash-text {
             font-size: 50px;
             color: yellow;
-            transform: rotate(45deg);
+            transform: rotate(225deg);
             white-space: nowrap;
             position: absolute;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -40,13 +40,13 @@ body {
         /* Keyframe animation to make the text pulsate */
         @keyframes pulse {
             0% {
-                transform: rotate(45deg) scale(1);
+                transform: rotate(225deg) scale(1);
             }
             50% {
-                transform: rotate(45deg) scale(1.1);
+                transform: rotate(225deg) scale(1.1);
             }
             100% {
-                transform: rotate(45deg) scale(1);
+                transform: rotate(225deg) scale(1);
             }
         }
 /* Skybox Canvas */
