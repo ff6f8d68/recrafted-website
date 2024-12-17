@@ -32,7 +32,7 @@ body {
 .splash-text {
     font-size: 50px;
     color: yellow;
-    transform: rotate(45deg) translate(20px, 80px); /* Rotate 45 degrees and move it to the right and lower */
+    transform: rotate(-145deg) translate(200px, 800px); /* Rotate 45 degrees and move it to the right and lower */
     white-space: nowrap;
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -42,13 +42,13 @@ body {
 /* Keyframe animation to make the text pulsate */
 @keyframes pulse {
     0% {
-        transform: rotate(45deg) translate(20px, 80px) scale(1);
+        transform: rotate(45deg) translate(200px, 800px) scale(1);
     }
     50% {
-        transform: rotate(45deg) translate(20px, 80px) scale(1.1);
+        transform: rotate(45deg) translate(200px, 800px) scale(1.1);
     }
     100% {
-        transform: rotate(45deg) translate(20px, 80px) scale(1);
+        transform: rotate(45deg) translate(200px, 800px) scale(1);
     }
 }
 
