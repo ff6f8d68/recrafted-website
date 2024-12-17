@@ -30,7 +30,7 @@ body {
 .splash-text {
     font-size: 50px;
     color: yellow;
-    transform: rotate(45deg) rotate(180deg); /* Rotate 45deg, then flip 180deg */
+    transform: rotate(-45deg); /* Rotate 45 degrees in the opposite direction */
     white-space: nowrap;
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -40,15 +40,16 @@ body {
 /* Keyframe animation to make the text pulsate */
 @keyframes pulse {
     0% {
-        transform: rotate(45deg) rotate(180deg) scale(1); /* Same as initial rotation */
+        transform: rotate(-45deg) scale(1);
     }
     50% {
-        transform: rotate(45deg) rotate(180deg) scale(1.1); /* Scale up with same rotation */
+        transform: rotate(-45deg) scale(1.1);
     }
     100% {
-        transform: rotate(45deg) rotate(180deg) scale(1); /* Back to original scale */
+        transform: rotate(-45deg) scale(1);
     }
 }
+
 
 /* Skybox Canvas */
 #skybox {
