@@ -72,8 +72,6 @@ gl.enableVertexAttribArray(positionLoc);
 gl.vertexAttribPointer(positionLoc, 3, gl.FLOAT, false, 0, 0);
 
 // Create a texture for the skybox
-const skyboxTexture = gl.createTexture();
-gl.bindTexture(gl.TEXTURE_CUBE_MAP, skyboxTexture);
 
 // Cube faces and image sources
 const faces = [
@@ -115,11 +113,16 @@ faces.forEach((face) => {
 });
 
 // Set texture parameters
-gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_R, gl.CLAMP_TO_EDGE);
+// Ensure the texture is bound properly before setting parameters
+const skyboxTexture = gl.createTexture();
+gl.bindTexture(gl.TEXTURE_CUBE_MAP, skyboxTexture);
+
+// Correct texture parameters for cube map
+gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); // Use LINEAR_MIPMAP_LINEAR for better mipmap filtering
+gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.LINEAR); // Use LINEAR for magnification
+gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); // Clamp to edge for horizontal axis
+gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); // Clamp to edge for vertical axis
+gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_R, gl.CLAMP_TO_EDGE); // Clamp to edge for depth axis
 
 // Render loop
 function render() {
