@@ -118,7 +118,7 @@ p {
 }
 
 .download-button:hover {
-    background-image: url('button_hover.svg');
+    background-image: url('button_hover.png');
 }
 
 .discord-button {
@@ -126,5 +126,5 @@ p {
 }
 
 .discord-button:hover {
-    background-image: url('button_hover.svg');
+    background-image: url('button_hover.png');
 }
