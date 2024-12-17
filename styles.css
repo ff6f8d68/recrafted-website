@@ -27,11 +27,11 @@ body {
         }
 
         /* Splash text style */
-/* Splash text style */
+
 .splash-text {
     font-size: 50px;
     color: yellow;
-    transform: rotate(-255deg); /* Rotate by -255 degrees */
+    transform: rotate(-145deg); /* Rotate by -145 degrees */
     white-space: nowrap;
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -41,15 +41,16 @@ body {
 /* Keyframe animation to make the text pulsate */
 @keyframes pulse {
     0% {
-        transform: rotate(-255deg) scale(1);
+        transform: rotate(-145deg) scale(1);
     }
     50% {
-        transform: rotate(-255deg) scale(1.1);
+        transform: rotate(-145deg) scale(1.1);
     }
     100% {
-        transform: rotate(-255deg) scale(1);
+        transform: rotate(-145deg) scale(1);
     }
 }
+
 
 
 
