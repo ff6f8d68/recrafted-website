@@ -27,28 +27,29 @@ body {
         }
 
         /* Splash text style */
-        .splash-text {
-            font-size: 50px;
-            color: yellow;
-            transform: rotate(225deg);
-            white-space: nowrap;
-            position: absolute;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: pulse 1s infinite ease-in-out;
-        }
+.splash-text {
+    font-size: 50px;
+    color: yellow;
+    transform: rotate(45deg) rotate(180deg); /* Rotate 45deg, then flip 180deg */
+    white-space: nowrap;
+    position: absolute;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 1s infinite ease-in-out;
+}
 
-        /* Keyframe animation to make the text pulsate */
-        @keyframes pulse {
-            0% {
-                transform: rotate(225deg) scale(1);
-            }
-            50% {
-                transform: rotate(225deg) scale(1.1);
-            }
-            100% {
-                transform: rotate(225deg) scale(1);
-            }
-        }
+/* Keyframe animation to make the text pulsate */
+@keyframes pulse {
+    0% {
+        transform: rotate(45deg) rotate(180deg) scale(1); /* Same as initial rotation */
+    }
+    50% {
+        transform: rotate(45deg) rotate(180deg) scale(1.1); /* Scale up with same rotation */
+    }
+    100% {
+        transform: rotate(45deg) rotate(180deg) scale(1); /* Back to original scale */
+    }
+}
+
 /* Skybox Canvas */
 #skybox {
     position: fixed;
