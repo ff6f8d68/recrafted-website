@@ -6,12 +6,49 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    overflow: hidden; /* Prevent scrollbars */
-    color: white;
-    background: #a3d0ff; /* Placeholder fog color */
-}
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background: url('bg.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Mojangles', sans-serif; /* Applying Mojangles font */
+        }
 
+        /* Define Mojangles font */
+        @font-face {
+            font-family: 'Mojangles';
+            src: url('Mojangles.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Splash text style */
+        .splash-text {
+            font-size: 120px;
+            color: yellow;
+            transform: rotate(45deg);
+            white-space: nowrap;
+            position: absolute;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* Keyframe animation to make the text pulsate */
+        @keyframes pulse {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+            50% {
+                transform: rotate(45deg) scale(1.1);
+            }
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
 /* Skybox Canvas */
 #skybox {
     position: fixed;
