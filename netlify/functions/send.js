@@ -1,4 +1,4 @@
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
   if (event.httpMethod === 'POST') {
     // Get query parameters from the URL
     const { name, body, sender } = event.queryStringParameters || {};
@@ -35,11 +35,10 @@ exports.handler = async function(event, context) {
       };
     }
 
-    // Redirect to the mailto link
+    // Success response
     return {
       statusCode: 200,
-      body: JSON.stringify({ error: 'success' })
-      }
+      body: JSON.stringify({ message: 'Success' })
     };
   } else {
     return {
