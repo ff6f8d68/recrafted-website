@@ -12,17 +12,16 @@ exports.handler = async function(event, context) {
     }
 
     const data = JSON.parse(event.body);
-    const fetch = (await import('node-fetch')).default;
 
     // Your Discord webhook URL
-    const discordWebhookUrl = 'https://discord.com/api/webhooks/1319341897927626822/a9wCm1HSgsy4PGUpALFo7Xal-T7Gw9eLFUaAb9Rx-VL2eOk0gWMNQllV2LhncKLyYeC8';
+    const discordWebhookUrl = 'https://discord.com/api/webhooks/1284559062859518014/kac428QnDZZlEnJxL-WSEvx1WOrNKjLPg4cNhKAL4xmkIjI4DkqJ0BlI-wi0YsXcn8ah';
 
     // Prepare the payload for Discord with the required format
     const payload = {
       content: `### ${name}\n${body}\n-# ${sender}\n\nType: ${data.Type}\nEmail: ${data.email}\nMessage: ${data.Report}`
     };
 
-    // Send the message to Discord
+    // Send the message to Discord using native fetch
     try {
       await fetch(discordWebhookUrl, {
         method: 'POST',
@@ -32,15 +31,14 @@ exports.handler = async function(event, context) {
     } catch (error) {
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to send report' })
+        body: JSON.stringify({ error: 'Failed to send report', details: error.message })
       };
     }
 
     // Redirect to the mailto link
     return {
-      statusCode: 302,
-      headers: {
-        Location: `mailto:nexusmcreports@proton.me?subject=Support%20Query&body=${encodeURIComponent(body)}`
+      statusCode: 200,
+      body: JSON.stringify({ error: 'success' })
       }
     };
   } else {
