@@ -11,14 +11,12 @@ exports.handler = async function (event, context) {
       };
     }
 
-    const data = JSON.parse(event.body);
-
     // Your Discord webhook URL
     const discordWebhookUrl = 'https://discord.com/api/webhooks/1284559062859518014/kac428QnDZZlEnJxL-WSEvx1WOrNKjLPg4cNhKAL4xmkIjI4DkqJ0BlI-wi0YsXcn8ah';
 
     // Prepare the payload for Discord with the required format
     const payload = {
-      content: `### ${name}\n${body}\n-# ${sender}\n\nType: ${data.Type}\nEmail: ${data.email}\nMessage: ${data.Report}`
+      content: `### ${name}\n${body}\n-# ${sender}`
     };
 
     // Send the message to Discord using native fetch
